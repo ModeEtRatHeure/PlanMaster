@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListCell?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <VBox minWidth="50" prefWidth="80" styleClass="options-menu">
+        <VBox fx:id="backgroundOptionsMenu">
+            <Label>
+                Arrière-plan
+            </Label>
+            <HBox>
+                <Label>Choisir une couleur</Label>
+                <ColorPicker></ColorPicker>
+            </HBox>
+            <HBox>
+                <Label>Choisir une image</Label>
+                <Button fx:id="browseImage">Selectionner</Button>
+            </HBox>
+        </VBox>
+        <VBox fx:id="daysOptionsMenu">
+            <Label>
+                Jours de la semaine
+            </Label>
+            <HBox>
+                <Label>Nombre</Label>
+                <!--Un node qui permet de choisir entre 5 et 7-->
+            </HBox>
+            <Label>
+                Style des rectangles
+            </Label>
+            <HBox>
+                <Label>Choisir une couleur</Label>
+                <ColorPicker/>
+            </HBox>
+            <HBox>
+                <Label>Visibles</Label>
+                <CheckBox/>
+            </HBox>
+            <HBox>
+                <Label>Arrondi</Label>
+                <!--Un node qui permet de choisir entre un certain nombre et un certain nombre-->
+            </HBox>
+        </VBox>
+    </VBox>
+    <VBox VBox.vgrow="ALWAYS" alignment="CENTER" fx:id="previewArea">
+        <ImageView fx:id="preview"></ImageView>
+    </VBox>
+    <VBox minWidth="50" prefWidth="80" styleClass="options-menu">
+        <Label>
+            Heures
+        </Label>
+        <HBox>
+            <Label>Visibles</Label>
+            <CheckBox/>
+        </HBox>
+        <HBox>
+            <Label>Graduations</Label>
+            <ListCell/>
+        </HBox>
+        <Label>
+            Evènement
+        </Label>
+        <HBox>
+            <Button>Nouveau</Button>
+        </HBox>
+    </VBox>
+</HBox>
+

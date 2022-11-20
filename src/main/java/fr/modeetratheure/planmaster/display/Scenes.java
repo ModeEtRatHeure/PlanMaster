@@ -2,7 +2,8 @@ package fr.modeetratheure.planmaster.display;
 
 public enum Scenes {
 
-    MAIN_SCENE("scenes/main-scene.fxml", true, 800, 500);
+    MAIN_SCENE("scenes/main-scene.fxml", true, 800, 500),
+    PLANNING_DESIGN_SCENE("scenes/planning-design.fxml", true, 800, 500);
 
     private String scenePath;
     private boolean canBeResized;

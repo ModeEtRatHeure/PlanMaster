@@ -1,4 +1,4 @@
-package fr.modeetratheure.planmaster.display.components;
+package fr.modeetratheure.planmaster.display.componentsdata;
 
 public enum StyleClasses {
 

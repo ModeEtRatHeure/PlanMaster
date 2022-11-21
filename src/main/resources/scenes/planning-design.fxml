@@ -3,6 +3,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.PlanningPreview?>
 <HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <PlanningPreview numberOfDays="5"></PlanningPreview>
 </HBox>
 

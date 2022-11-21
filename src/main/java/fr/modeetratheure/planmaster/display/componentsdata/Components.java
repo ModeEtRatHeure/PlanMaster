@@ -4,7 +4,8 @@ public enum Components {
 
     CATEGORY("category"),
     OPTION_LIST("option-list"),
-    OPTION("option");
+    OPTION("option"),
+    PLANNING_PREVIEW("planning-preview");
 
     private final String path;
 

@@ -1,23 +1,39 @@
 package fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 
 public class SliderOption extends Option{
 
     private Slider slider;
+    private Label label;
     private int defaultValue, maxValue, minValue, increment, minorTickUnit, majorTickUnit, blockIncrement;
 
     public SliderOption(){
         super();
         slider = new Slider();
+        label = new Label(Integer.toString(defaultValue));
+        label.getStyleClass().setAll("slider-label");
+        slider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                slider.setValue(Math.round(newValue.doubleValue()));
+                label.setText(Integer.toString((int) slider.getValue()));
+            }
+        });
+        slider.setSnapToTicks(true);
         slider.setShowTickLabels(true);
         slider.setShowTickMarks(true);
+        slider.setBlockIncrement(1);
         setOptionType();
     }
 
     @Override
     public void setOptionType() {
-        getChildren().add(slider);
+        getChildren().addAll(slider, label);
     }
 
     public int getDefaultValue() {

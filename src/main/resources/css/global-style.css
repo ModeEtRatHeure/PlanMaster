@@ -1,0 +1,24 @@
+.button, .slider, .check-box, .color-picker{
+    -fx-focus-traversable: false;
+}
+
+.menu-bar{
+    -fx-background-color: #bfbfbf;
+}
+
+.menu:hover, .menu:focused, .menu:showing{
+    -fx-background-color: #999999;
+}
+
+.menu-item:hover  .label, .menu-item:focused .label, .menu-item:focused{
+    -fx-text-fill: black;
+    -fx-background-color: #fafafa;
+}
+
+.vertical-menu{
+    -fx-background-color: #cfcfcf;
+}
+
+.root{
+    -fx-background-color: #dfdfdf;
+}

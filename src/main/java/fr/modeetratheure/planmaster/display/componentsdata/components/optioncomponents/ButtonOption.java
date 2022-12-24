@@ -19,7 +19,7 @@ public class ButtonOption extends Option{
     }
 
     public void setButtonName(String name){
-        buttonName = buttonName;
+        buttonName = name;
         button.setText(buttonName);
         setOptionType();
     }

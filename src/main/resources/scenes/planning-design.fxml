@@ -2,9 +2,58 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
 <?import fr.modeetratheure.planmaster.display.componentsdata.components.PlanningPreview?>
-<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-    <PlanningPreview numberOfDays="5"></PlanningPreview>
-</HBox>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.OptionList?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.Category?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.ButtonOption?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.ColorPickerOption?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.SliderOption?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.CheckBoxOption?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fr.modeetratheure.planmaster.controllers.PlanningDesignController" stylesheets="@../css/global-style.css">
+    <MenuBar>
+        <Menu text="Fichier">
+        </Menu>
+        <Menu text="Fenetre">
+        </Menu>
+    </MenuBar>
+    <HBox VBox.vgrow="ALWAYS">
+        <OptionList minWidth="150" prefWidth="430">
+            <Category text="Arrière-plan">
+                <ButtonOption text="Image" onAction="#browseImageForBg" buttonName="Choisir"/>
+                <ColorPickerOption text="Choisir une couleur"/>
+            </Category>
+            <Category text="Jours">
+                <SliderOption text="Nombre" defaultValue="7" minorTickUnit="1" majorTickUnit="2" blockIncrement="1" minValue="1" maxValue="7"/>
+                <Category text="Bordure">
+                    <CheckBoxOption isChecked="true" text="Visible"/>
+                    <ColorPickerOption text="Couleur"/>
+                    <SliderOption text="Arrondi" minValue="0" maxValue="5" blockIncrement="1"/>
+                    <!--Largeur-->
+                    <!--Longueur-->
+                </Category>
+                <Category text="Fond">
+                    <CheckBoxOption text="Transparent"/>
+                    <ColorPickerOption text="Couleur"/>
+                    <ButtonOption text="Image" buttonName="Choisir"/>
+                </Category>
+            </Category>
+        </OptionList>
+        <VBox prefWidth="1000" alignment="CENTER">
+            <PlanningPreview prefHeight="500" fx:id="planning" HBox.hgrow="ALWAYS"/>
+        </VBox>
+        <OptionList prefWidth="440" HBox.hgrow="ALWAYS" minWidth="150">
+            <Category text="Heures">
+                <CheckBoxOption text="Visible"/>
+                <SliderOption text="Graduations" minValue="1" defaultValue="1" maxValue="12" blockIncrement="1" minorTickUnit="1" majorTickUnit="3"/>
+                <ColorPickerOption text="Couleur"/>
+            </Category>
+            <Category text="Evenement">
+                <ButtonOption text="Nouvel évènement" buttonName="Nouveau"/>
+            </Category>
+        </OptionList>
+    </HBox>
+</VBox>
 

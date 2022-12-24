@@ -14,6 +14,7 @@ public class PMStage {
         this.stage.setTitle(title);
         sceneManager = new SceneManager(this.stage);
         stage.centerOnScreen();
+        stage.setMaximized(true);
         this.stage.show();
     }
 

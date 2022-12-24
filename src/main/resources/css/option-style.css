@@ -1,0 +1,13 @@
+.category-title{
+    -fx-font-weight: bold;
+}
+
+.slider-label{
+    -fx-padding: 3;
+    -fx-font-weight: bolder;
+    -fx-font-size: 15;
+    -fx-text-fill: #6f6f6f;
+    -fx-border-radius: 3;
+    -fx-border-color: transparent;
+    -fx-border-insets: 0 0 0 7;
+}

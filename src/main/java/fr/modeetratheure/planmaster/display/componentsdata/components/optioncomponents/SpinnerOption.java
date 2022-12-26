@@ -12,6 +12,7 @@ public class SpinnerOption extends Option{
     public SpinnerOption(){
         super();
         spinner = new Spinner<Integer>();
+        spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(minValue, maxValue));
         setOptionType();
     }
 
@@ -44,6 +45,7 @@ public class SpinnerOption extends Option{
 
     public void setMinValue(int minValue) {
         this.minValue = minValue;
+        updateSpinnerValueFactory();
     }
 
     private void updateSpinnerValueFactory(){

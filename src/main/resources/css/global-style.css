@@ -1,4 +1,4 @@
-.button, .slider, .check-box, .color-picker{
+.button, .slider, .check-box, .color-picker, .text-field{
     -fx-focus-traversable: false;
 }
 

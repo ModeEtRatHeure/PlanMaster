@@ -12,9 +12,14 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.ChoiceBoxOption?>
+<?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.TextOption?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fr.modeetratheure.planmaster.controllers.PlanningDesignController" stylesheets="@../css/global-style.css">
     <MenuBar>
         <Menu text="Fichier">
+            <MenuItem text="Enregistrer"/>
+            <MenuItem text="Enregistrer sous"/>
+            <MenuItem text="Exporter"/>
         </Menu>
         <Menu text="Fenetre">
         </Menu>
@@ -40,6 +45,9 @@
                     <ButtonOption text="Image" buttonName="Choisir"/>
                 </Category>
             </Category>
+            <Category text="Bords">
+                <TextOption onAction="#browseImageForBg" text="Espacement"/>
+            </Category>
         </OptionList>
         <VBox prefWidth="1000" alignment="CENTER">
             <PlanningPreview prefHeight="500" fx:id="planning" HBox.hgrow="ALWAYS"/>
@@ -47,7 +55,7 @@
         <OptionList prefWidth="440" HBox.hgrow="ALWAYS" minWidth="150">
             <Category text="Heures">
                 <CheckBoxOption text="Visible"/>
-                <SliderOption text="Graduations" minValue="1" defaultValue="1" maxValue="12" blockIncrement="1" minorTickUnit="1" majorTickUnit="3"/>
+                <ChoiceBoxOption text="Graduations" items="1h;2h;5h;6h;12H" defaultValue="1h"/>
                 <ColorPickerOption text="Couleur"/>
             </Category>
             <Category text="Evenement">

@@ -19,7 +19,6 @@ public class PlanningPreview extends HBox implements CustomComponent {
         setMaxHeight(500);
         setPrefWidth(500);
         setPrefHeight(400);
-        System.out.println(getPrefWidth()+"tet");
         addDays(numberOfDays);
     }
 
@@ -56,8 +55,6 @@ public class PlanningPreview extends HBox implements CustomComponent {
     private VBox addDay(){
         VBox vbox = new VBox();
         vbox.setPrefWidth(Math.abs(getPrefHeight()) - ((numberOfDays + 1) * getSpacing()));
-        System.out.println(Math.abs(getPrefHeight()));
-        System.out.println(3 * Math.abs(getPrefHeight())/4);
         vbox.setMaxHeight(4 * Math.abs(getPrefHeight())/5);
         vbox.getStyleClass().add(StyleClasses.DAYS.getName());
         return vbox;

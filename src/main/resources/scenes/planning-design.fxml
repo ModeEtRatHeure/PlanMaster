@@ -14,6 +14,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.ChoiceBoxOption?>
 <?import fr.modeetratheure.planmaster.display.componentsdata.components.optioncomponents.TextOption?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Accordion?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fr.modeetratheure.planmaster.controllers.PlanningDesignController" stylesheets="@../css/global-style.css">
     <MenuBar>
         <Menu text="Fichier">
@@ -26,6 +28,10 @@
     </MenuBar>
     <HBox VBox.vgrow="ALWAYS">
         <OptionList minWidth="150" prefWidth="430">
+            <Category text="Général">
+                <SliderOption text="Largeur"/>
+                <SliderOption text="Longueur"/>
+            </Category>
             <Category text="Arrière-plan">
                 <ButtonOption text="Image" onAction="#browseImageForBg" buttonName="Choisir"/>
                 <ColorPickerOption text="Choisir une couleur"/>
@@ -36,8 +42,8 @@
                     <CheckBoxOption isChecked="true" text="Visible"/>
                     <ColorPickerOption text="Couleur"/>
                     <SliderOption text="Arrondi" minValue="0" maxValue="5" blockIncrement="1"/>
-                    <!--Largeur-->
-                    <!--Longueur-->
+                    <SliderOption text="Largeur"/>
+                    <SliderOption text="Longueur"/>
                 </Category>
                 <Category text="Fond">
                     <CheckBoxOption text="Transparent"/>
@@ -46,7 +52,7 @@
                 </Category>
             </Category>
             <Category text="Bords">
-                <TextOption onAction="#browseImageForBg" text="Espacement"/>
+                <SliderOption text="Espacement"/>
             </Category>
         </OptionList>
         <VBox prefWidth="1000" alignment="CENTER">
@@ -59,7 +65,8 @@
                 <ColorPickerOption text="Couleur"/>
             </Category>
             <Category text="Evenement">
-                <ButtonOption text="Nouvel évènement" buttonName="Nouveau"/>
+                <Accordion fx:id="events"/>
+                <Button text="Nouvel évènement"/>
             </Category>
         </OptionList>
     </HBox>

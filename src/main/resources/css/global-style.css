@@ -1,5 +1,9 @@
-.button, .slider, .check-box, .color-picker, .text-field{
+.button, .slider, .check-box, .color-picker, .spinner, .choice-box, .text-field{
     -fx-focus-traversable: false;
+}
+
+.slider .axis .axis-tick-mark, .slider .axis .axis-minor-tick-mark{
+    -fx-stroke: #404040;
 }
 
 .menu-bar{

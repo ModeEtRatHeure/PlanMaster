@@ -15,6 +15,7 @@ public class SliderOption extends Option{
     public SliderOption(){
         super();
         slider = new Slider();
+        slider.setPrefWidth(120);
         label = new Label(Integer.toString(defaultValue));
         label.getStyleClass().setAll("slider-label");
         slider.valueProperty().addListener(new ChangeListener<Number>() {

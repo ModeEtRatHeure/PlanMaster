@@ -1,0 +1,8 @@
+.days{
+    -fx-background-color: pink;
+}
+
+.planning{
+    -fx-border-color: #888888;
+    -fx-border-size: 1;
+}

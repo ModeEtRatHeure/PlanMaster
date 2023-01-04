@@ -1,7 +1,6 @@
 package fr.modeetratheure.planmaster.utils;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Field;
 
 public class Helper {
@@ -18,7 +17,7 @@ public class Helper {
         Field folderField;
         File file = null;
         try {
-            folderField = Helper.class.getDeclaredField(parentFolder);
+            folderField = Helper.class.getDeclaredField(parentFolder + "Folder");
             if(!folderField.getType().equals(File.class)){
                 //On veut que ce soit forcément un field de type File donc on rentre aussi dans le catch
                 throw new NoSuchFieldException();
@@ -45,6 +44,27 @@ public class Helper {
             return null;
         }
         return file;
+    }
+
+    public static String readEntireFile(String path){
+        BufferedReader bReader;
+        try {
+            bReader = new BufferedReader(new FileReader(path));
+        } catch (FileNotFoundException e) {
+            logger.error("Failed to load planning at " + path);
+            return null;
+        }
+        String currentLine;
+        StringBuilder sBuilder = new StringBuilder();
+        try{
+            while((currentLine = bReader.readLine()) != null){
+                sBuilder.append(currentLine).append("\n");
+            }
+        }catch(IOException e){
+            logger.error("Failed to load planning at " + path);
+            return null;
+        }
+        return sBuilder.toString();
     }
 
     private static void generateAppFolder(){
